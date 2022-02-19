@@ -7,7 +7,7 @@ $ wget https://dlcdn.apache.org/zookeeper/zookeeper-3.7.0/apache-zookeeper-3.7.0
 
 2. Update `zoo.cfg`
 ```
-dataDir=/ethereum-clean-data/sk/zookeeper/data
+dataDir=/opt/zookeeper/data
 autopurge.purgeInterval=12
 admin.enableServer=true
 admin.serverPort=2182
