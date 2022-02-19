@@ -168,8 +168,8 @@
 
 4. Access targets @ http://localhost:9091/classic/targets.
 
-## Graphana
-1. Run Graphana docker container
+## Grafana
+1. Run Grafana docker container
     ```sh
     $ docker run -p3000:3000 \
       -e PROMETHEUS_URL=http://localhost:9090/ -e PULSAR_CLUSTER=pulsar-cluster-1 \
@@ -183,6 +183,6 @@
 
 3. Import dashboards
 
-   - Access Graphana @ http://localhost:3001/ 
+   - Access Grafana @ http://localhost:3001/ 
    - Login using username and password as `admin/admin`
    - Import [dashboards](https://github.com/iamsmkr/installation-guides/tree/main/pulsar/dashboards)
