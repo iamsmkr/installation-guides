@@ -114,7 +114,7 @@
 
 3. Update `bkvm.conf`
     
-    Make following changes to the configuration file or copy [broker.conf](https://github.com/iamsmkr/installation-guides/blob/main/pulsar/broker.conf) to `/opt/pulsar-manager/pulsar-manager/conf`.
+    Make following changes to the configuration file or copy [bkvm.conf](https://github.com/iamsmkr/installation-guides/blob/main/pulsar/bkvm.conf) to `/opt/pulsar-manager/pulsar-manager/`.
     ```conf
     bkvm.enabled=false
     ```
