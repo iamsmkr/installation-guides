@@ -44,9 +44,10 @@ dlog.bkcAckQuorumSize=1
 ```sh
 $ ./bin/pulsar bookie   # Or,
 $ ./bin/pulsar-daemon start bookie 
+```
 
 3. Verify Bookkeeper
-```
+```sh
 $ ./bin/bookkeeper shell bookiesanity
 ```
 
