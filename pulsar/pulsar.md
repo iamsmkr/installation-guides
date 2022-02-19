@@ -42,11 +42,13 @@ dlog.bkcAckQuorumSize=1
 
 2. Start Bookkeeper
 ```sh
-$ ./bin/pulsar bookie
+$ ./bin/pulsar bookie   # Or,
 $ ./bin/pulsar-daemon start bookie 
+
+3. Verify Bookkeeper
+```
 $ ./bin/bookkeeper shell bookiesanity
 ```
-
 
 ## Pulsar
 1. Initialize cluster metadata in Zookeeper
