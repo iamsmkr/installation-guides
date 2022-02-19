@@ -172,7 +172,7 @@
 1. Run Graphana docker container
     ```sh
     $ docker run -p3000:3000 \
-      -e PROMETHEUS_URL=http://$PROMETHEUS_HOST:9090/ -e PULSAR_CLUSTER=pulsar-cluster-1 \
+      -e PROMETHEUS_URL=http://localhost:9090/ -e PULSAR_CLUSTER=pulsar-cluster-1 \
       apachepulsar/pulsar-grafana:latest
     ```
 
@@ -182,3 +182,7 @@
     ```
 
 3. Import dashboards
+
+   - Access Graphana @ http://localhost:3001/ 
+   - Login using username and password as `admin/admin`
+   - Import dashboards of your choice.
