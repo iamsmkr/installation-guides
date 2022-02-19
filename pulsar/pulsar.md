@@ -29,6 +29,8 @@
 
 ## Bookkeeper
 1. Update `bookkeeper.conf`
+    
+    Make following changes to the configuration file or copy [bookkeeper.conf](https://github.com/iamsmkr/installation-guides/blob/main/pulsar/bookkeeper.conf) to `/opt/pulsar/conf`.
     ```
     allowLoopback=true
     journalMaxSizeMB=2048
@@ -67,6 +69,8 @@
     ```
 
 2. Update `broker.conf`
+    
+    Make following changes to the configuration file or copy [broker.conf](https://github.com/iamsmkr/installation-guides/blob/main/pulsar/broker.conf) to `/opt/pulsar/conf`.
     ```
     zookeeperServers=localhost:2181
     brokerServicePortTls=6651
@@ -109,7 +113,9 @@
     ```
 
 3. Update `bkvm.conf`
-    ```
+    
+    Make following changes to the configuration file or copy [broker.conf](https://github.com/iamsmkr/installation-guides/blob/main/pulsar/broker.conf) to `/opt/pulsar-manager/pulsar-manager/conf`.
+    ```conf
     bkvm.enabled=false
     ```
 
