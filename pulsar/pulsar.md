@@ -185,4 +185,4 @@
 
    - Access Graphana @ http://localhost:3001/ 
    - Login using username and password as `admin/admin`
-   - Import dashboards of your choice.
+   - Import [dashboards](https://github.com/iamsmkr/installation-guides/tree/main/pulsar/dashboards)
