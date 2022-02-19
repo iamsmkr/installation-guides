@@ -16,7 +16,7 @@ admin.serverPort=2182
 
 4. Start Zookeeper
 ```sh
-$ bin/zkServer.sh start
+$ ./bin/zkServer.sh start
 ```
 
 5. Verify Zookeeper 
@@ -79,17 +79,16 @@ defaultRetentionSizeInMB=-1
 
 3. Start Pulsar
 ```sh
-$ bin/pulsar-daemon start broker
-$ bin/pulsar broker
+$ ./bin/pulsar-daemon start broker  # Or,
+$ ./bin/pulsar broker
 ```
 
 4. Verify Pulsar
 ```sh
-$ bin/pulsar-admin topics create public/default/topic1
-$ bin/pulsar-client consume persistent://public/default/topic1 -s "sub1"
-$ bin/pulsar-client produce persistent://public/default/topic1 --messages "msg3"
+$ ./bin/pulsar-admin topics create public/default/topic1
+$ ./bin/pulsar-client consume persistent://public/default/topic1 -s "subs1"
+$ ./bin/pulsar-client produce persistent://public/default/topic1 --messages "msg1"
 ```
-
 
 ## Pulsar Manager
 1. Download Pulsar Manager
@@ -145,7 +144,7 @@ http://127.0.0.1:8080
 
 2. Run Prometheus docker container
 ```sh
-$ docker run -p 9090:9090 -v /ethereum-clean-data/sk/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+$ docker run -p 9090:9090 -v /opt/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
 ```
 
 3. Create tunnel (if required)
