@@ -153,7 +153,7 @@
 
 
 ## Prometheus
-1. Create Prometheus template
+1. Copy Prometheus template [prometheus.yml](https://github.com/iamsmkr/installation-guides/blob/main/pulsar/prometheus.yml) to `/opt/prometheus`.
 
 2. Run Prometheus docker container
     ```sh
@@ -166,7 +166,7 @@
     $ ssh -i aws.pem -N -f -L 8080:localhost:8080 ubuntu@ec2-3-82-189-53.compute-1.amazonaws.com
     ```
 
-4. Import dashboards
+4. Access targets @ http://localhost:9091/classic/targets.
 
 ## Graphana
 1. Run Graphana docker container
@@ -181,3 +181,4 @@
     $ ssh -i aws.pem -N -f -L 3000:localhost:3000 ubuntu@ec2-3-82-189-53.compute-1.amazonaws.com
     ```
 
+3. Import dashboards
