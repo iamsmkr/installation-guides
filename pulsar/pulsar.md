@@ -197,6 +197,9 @@
 4. Access Prometheus
     
     - Access targets @ http://localhost:9090/classic/targets
+ 
+5. Access Metrics
+
     - Access broker metrics @ http://localhost:8080/metrics/
     - Access bookie metrics @ http://localhost:8000/metrics/
     - Access zookeeper metrics @ http://localhost:7001/metrics/
