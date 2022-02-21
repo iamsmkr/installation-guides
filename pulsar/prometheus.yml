@@ -28,7 +28,7 @@ scrape_configs:
     honor_labels: true
     static_configs:
     - targets:
-      - '127.0.0.1:8080'
+      - '127.0.0.1:7001'
 
  - job_name: "node"
     static_configs:
