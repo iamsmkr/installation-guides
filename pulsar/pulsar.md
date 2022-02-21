@@ -184,8 +184,8 @@
     $ ssh -i aws.pem -N -f -L 3000:localhost:3000 ubuntu@ec2-3-82-189-53.compute-1.amazonaws.com
     ```
 
-3. Import dashboards
+3. Access dashboards
 
    - Access Grafana @ http://localhost:3001/ 
    - Login using username and password as `admin/happypulsaring`
-   - Import [dashboards](https://github.com/iamsmkr/installation-guides/tree/main/pulsar/dashboards)
+
