@@ -99,6 +99,19 @@
     $ ./bin/pulsar-client produce persistent://public/default/topic1 --messages "msg1"
     ```
 
+## Node Exporter
+1. Download node-exporter
+    ```sh
+    $ wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz
+    $ tar -zvxf node_exporter-1.3.1.linux-amd64.tar.gz
+    ```
+
+2. Start Node Exporter
+    ```sh
+    $ cd node_exporter-1.3.1.linux-amd64/
+    $ ./node_exporter
+    ```
+
 ## Pulsar Manager
 1. Download Pulsar Manager
     ```sh
