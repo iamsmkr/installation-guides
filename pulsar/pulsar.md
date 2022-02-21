@@ -161,7 +161,9 @@
 
 6. Create Environment
 
-    - Access pulsar manager @ http://localhost:7750/ui/index.html and create an environment with following details:
+    - Goto pulsar manager @ http://localhost:7750/ui/index.html 
+    - Login using username/password as `admin/apachepulsar`
+    - Create an environment with following details:
     
         ```
         Environment Name = standalone
@@ -206,6 +208,6 @@
 
 3. Access dashboards
 
-   - Access Grafana @ http://localhost:3000/ 
+   - Goto Grafana @ http://localhost:3000/ 
    - Login using username and password as `admin/happypulsaring`
 
