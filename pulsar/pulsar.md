@@ -171,9 +171,10 @@
 ## Grafana
 1. Run Grafana docker container
     ```sh
-    $ docker run -p3000:3000 \
-      -e PROMETHEUS_URL=http://localhost:9090/ -e PULSAR_CLUSTER=pulsar-cluster-1 \
-      apachepulsar/pulsar-grafana:latest
+    $ docker run --network="host" -p 3000:3000 \
+        -e PULSAR_PROMETHEUS_URL="http://localhost:9090" \
+        -e PULSAR_CLUSTER="pulsar-cluster-1" \
+        streamnative/apache-pulsar-grafana-dashboard:latest
     ```
 
 2. Create tunnel (if required)
@@ -184,5 +185,5 @@
 3. Import dashboards
 
    - Access Grafana @ http://localhost:3001/ 
-   - Login using username and password as `admin/admin`
+   - Login using username and password as `admin/happypulsaring`
    - Import [dashboards](https://github.com/iamsmkr/installation-guides/tree/main/pulsar/dashboards)
