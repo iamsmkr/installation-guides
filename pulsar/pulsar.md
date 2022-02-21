@@ -26,9 +26,25 @@
     $ echo stat | nc localhost 2181
     ```
 
+## Pulsar
+1. Download and install pulsar
+    ```sh
+    $ wget https://archive.apache.org/dist/pulsar/pulsar-2.9.1/apache-pulsar-2.9.1-bin.tar.gz
+    $ tar xvfz apache-pulsar-2.9.1-bin.tar.gz
+    ```
+2. Initialize cluster metadata in Zookeeper
+    ```sh
+    $ ./bin/pulsar initialize-cluster-metadata \
+      --cluster pulsar-cluster-1 \
+      --zookeeper localhost:2181 \
+      --configuration-store localhost:2181 \
+      --web-service-url http://localhost:8080 \
+      --web-service-url-tls https://localhost:8443 \
+      --broker-service-url pulsar://localhost:6650 \
+      --broker-service-url-tls pulsar+ssl://localhost:6651
+    ```
 
-## Bookkeeper
-1. Update `bookkeeper.conf`
+3. Update `bookkeeper.conf`
     
     Make following changes to the configuration file or copy [bookkeeper.conf](https://github.com/iamsmkr/installation-guides/blob/main/pulsar/bookkeeper.conf) to `/opt/pulsar/conf`.
     ```
@@ -44,31 +60,18 @@
     dlog.bkcAckQuorumSize=1
     ```
 
-2. Start Bookkeeper
+3. Start Bookkeeper
     ```sh
     $ ./bin/pulsar bookie   # Or,
     $ ./bin/pulsar-daemon start bookie 
     ```
 
-3. Verify Bookkeeper
+4. Verify Bookkeeper
     ```sh
     $ ./bin/bookkeeper shell bookiesanity
     ```
-
-## Pulsar
-1. Initialize cluster metadata in Zookeeper
-    ```sh
-    $ ./bin/pulsar initialize-cluster-metadata \
-      --cluster pulsar-cluster-1 \
-      --zookeeper localhost:2181 \
-      --configuration-store localhost:2181 \
-      --web-service-url http://localhost:8080 \
-      --web-service-url-tls https://localhost:8443 \
-      --broker-service-url pulsar://localhost:6650 \
-      --broker-service-url-tls pulsar+ssl://localhost:6651
-    ```
-
-2. Update `broker.conf`
+    
+5. Update `broker.conf`
     
     Make following changes to the configuration file or copy [broker.conf](https://github.com/iamsmkr/installation-guides/blob/main/pulsar/broker.conf) to `/opt/pulsar/conf`.
     ```
@@ -86,13 +89,13 @@
     defaultRetentionSizeInMB=-1
     ```
 
-3. Start Pulsar
+6. Start Pulsar
     ```sh
     $ ./bin/pulsar-daemon start broker  # Or,
     $ ./bin/pulsar broker
     ```
 
-4. Verify Pulsar
+7. Verify Pulsar
     ```sh
     $ ./bin/pulsar-admin topics create public/default/topic1
     $ ./bin/pulsar-client consume persistent://public/default/topic1 -s "subs1"
