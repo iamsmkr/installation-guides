@@ -16,12 +16,19 @@
     4lw.commands.whitelist=*
     ```
 
-3. Start Zookeeper
+3. Add following JVMFLAGS environment variable assignment near the top of the script `./bin/zkServer.sh`
+    ```sh
+    $ JVMFLAGS="$JVMFLAGS -Djute.maxbuffer=50000000"
+    ```
+
+    **Refer**: https://solr.apache.org/guide/7_4/setting-up-an-external-zookeeper-ensemble.html#configuring-jute-maxbuffer-on-zookeeper-nodes
+
+4. Start Zookeeper
     ```sh
     $ ./bin/zkServer.sh start
     ```
 
-4. Verify Zookeeper 
+5. Verify Zookeeper 
     ```sh
     $ echo stat | nc localhost 2181
     ```
