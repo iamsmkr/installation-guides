@@ -168,7 +168,10 @@
     $ ssh -i aws.pem -N -f -L 8080:localhost:8080 ubuntu@ec2-3-82-189-53.compute-1.amazonaws.com
     ```
 
-4. Access targets @ http://localhost:9091/classic/targets.
+4. Access Prometheus
+    
+    - Access targets @ http://localhost:9090/classic/targets
+    - Access metrics @ http://localhost:8080/metrics/
 
 ## Grafana
 1. Run Grafana docker container
@@ -186,6 +189,6 @@
 
 3. Access dashboards
 
-   - Access Grafana @ http://localhost:3001/ 
+   - Access Grafana @ http://localhost:3000/ 
    - Login using username and password as `admin/happypulsaring`
 
