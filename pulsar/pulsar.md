@@ -157,7 +157,9 @@
 
 2. Run Prometheus docker container
     ```sh
-    $ docker run --network="host" -p 8080:8080 -p 9090:9090 -v /opt/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+    $ docker run --network="host" -p 8080:8080 -p 9090:9090 \
+        -v /opt/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml \
+        prom/prometheus
     ```
 
 3. Create tunnel (if required)
