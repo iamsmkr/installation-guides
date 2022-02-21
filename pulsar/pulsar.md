@@ -203,6 +203,7 @@
     - Access broker metrics @ http://localhost:8080/metrics/
     - Access bookie metrics @ http://localhost:8000/metrics/
     - Access zookeeper metrics @ http://localhost:7001/metrics/
+    - Access node metrics @ http://localhost:9100/metrics/
 
 ## Grafana
 1. Run Grafana docker container
