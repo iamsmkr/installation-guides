@@ -145,11 +145,12 @@
 
 6. Create Environment
 
-    Access pulsar manager @ http://localhost:7750/ui/index.html and create an environment.
-    ```
-    Environment Name = standalone
-    Service URL      = http://127.0.0.1:8080
-    ```
+    - Access pulsar manager @ http://localhost:7750/ui/index.html and create an environment with following details:
+    
+        ```
+        Environment Name = standalone
+        Service URL      = http://127.0.0.1:8080
+        ```
 
 
 ## Prometheus
