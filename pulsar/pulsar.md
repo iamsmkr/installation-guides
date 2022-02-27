@@ -229,3 +229,16 @@
    - Goto Grafana @ http://localhost:3000/ 
    - Login using username and password as `admin/happypulsaring`
 
+## Zoo Navigator
+
+1. Start a web-based **ZooKeeper UI and editor/browser** 
+    
+    ```bash
+    $ docker run -d -p 9000:9000 \
+    	-e HTTP_PORT=9000 \
+      --name zoonavigator \
+      --restart unless-stopped \
+      elkozmon/zoonavigator:latest
+    ```
+    
+2. Create tunnel (if required)
