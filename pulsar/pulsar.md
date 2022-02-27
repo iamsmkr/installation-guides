@@ -235,10 +235,14 @@
     
     ```bash
     $ docker run -d -p 9000:9000 \
-    	-e HTTP_PORT=9000 \
+      -e HTTP_PORT=9000 \
       --name zoonavigator \
       --restart unless-stopped \
       elkozmon/zoonavigator:latest
     ```
     
 2. Create tunnel (if required)
+    ```bash
+    $ ssh -i aws_ethereum.pem -N -f -L 9001:localhost:9000 \
+    ubuntu@ec2-3-82-189-52.compute-1.amazonaws.com
+    ```
