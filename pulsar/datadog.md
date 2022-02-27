@@ -49,6 +49,6 @@ In order to use datadog to monitor pulsar instance:
       
  7. Your dashboards are ready to monitor
  
- ![Screenshot-2022-02-27-at-11-01-57-PM.png](https://github.com/streamnative/pulsar-datadog/blob/master/images/Broker.png)
+    ![Screenshot-2022-02-27-at-11-01-57-PM.png](https://github.com/streamnative/pulsar-datadog/blob/master/images/Broker.png)
 
     
