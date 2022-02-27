@@ -5,7 +5,7 @@ In order to use datadog to monitor pulsar instance:
 
 2. Install datadog agent
     ```
-    $ DD_INSTALL_ONLY=true DD_AGENT_MAJOR_VERSION=7 DD_API_KEY=5840c4202acaee60b8375ff645949b34 DD_SITE="datadoghq.eu" \
+    $ DD_INSTALL_ONLY=true DD_AGENT_MAJOR_VERSION=7 DD_API_KEY=5840c4202acaee60b8375ff645949b30 DD_SITE="datadoghq.eu" \
     bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script.sh)"
     ```
 
