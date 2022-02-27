@@ -1,4 +1,5 @@
-## Zookeeper
+## Zookeeper 
+**Note**: Ignore this section if you intend to start zookeeper that comes along with pulsar distribution.
 
 1. Download Zookeeper
     ```sh
@@ -15,20 +16,13 @@
     admin.serverPort=2182
     4lw.commands.whitelist=*
     ```
-
-3. Add following JVMFLAGS environment variable assignment near the top of the script `./bin/zkServer.sh`
-    ```sh
-    $ JVMFLAGS="$JVMFLAGS -Djute.maxbuffer=50000000"
-    ```
-
-    **Refer**: https://solr.apache.org/guide/7_4/setting-up-an-external-zookeeper-ensemble.html#configuring-jute-maxbuffer-on-zookeeper-nodes
-
-4. Start Zookeeper
+    
+3. Start Zookeeper
     ```sh
     $ ./bin/zkServer.sh start
     ```
 
-5. Verify Zookeeper 
+4. Verify Zookeeper 
     ```sh
     $ echo stat | nc localhost 2181
     ```
@@ -39,7 +33,18 @@
     $ wget https://archive.apache.org/dist/pulsar/pulsar-2.9.1/apache-pulsar-2.9.1-bin.tar.gz
     $ tar xvfz apache-pulsar-2.9.1-bin.tar.gz
     ```
-2. Initialize cluster metadata in Zookeeper
+
+2. Start zookeeper
+    ```sh
+    $ ./bin/pulsar-daemon start zookeeper
+    ```
+
+3. Verify Zookeeper 
+    ```sh
+    $ echo stat | nc localhost 2181
+    ```
+
+4. Initialize cluster metadata in Zookeeper
     ```sh
     $ ./bin/pulsar initialize-cluster-metadata \
       --cluster pulsar-cluster-1 \
@@ -51,7 +56,7 @@
       --broker-service-url-tls pulsar+ssl://localhost:6651
     ```
 
-3. Update `bookkeeper.conf`
+5. Update `bookkeeper.conf`
     
     Make following changes to the configuration file or copy [bookkeeper.conf](https://github.com/iamsmkr/installation-guides/blob/main/pulsar/bookkeeper.conf) to `/opt/pulsar/conf`.
     ```
@@ -67,18 +72,18 @@
     dlog.bkcAckQuorumSize=1
     ```
 
-3. Start Bookkeeper
+6. Start Bookkeeper
     ```sh
-    $ ./bin/pulsar bookie   # Or,
-    $ ./bin/pulsar-daemon start bookie 
+    $ ./bin/pulsar-daemon start bookie  # Or,
+    $ ./bin/pulsar bookie   # This doesn't create logs under `logs` directory
     ```
 
-4. Verify Bookkeeper
+7. Verify Bookkeeper
     ```sh
     $ ./bin/bookkeeper shell bookiesanity
     ```
     
-5. Update `broker.conf`
+8. Update `broker.conf`
     
     Make following changes to the configuration file or copy [broker.conf](https://github.com/iamsmkr/installation-guides/blob/main/pulsar/broker.conf) to `/opt/pulsar/conf`.
     ```
@@ -96,13 +101,13 @@
     defaultRetentionSizeInMB=-1
     ```
 
-6. Start Pulsar
+9. Start Pulsar
     ```sh
     $ ./bin/pulsar-daemon start broker  # Or,
-    $ ./bin/pulsar broker
+    $ ./bin/pulsar broker   # This doesn't create logs under `logs` directory
     ```
 
-7. Verify Pulsar
+10. Verify Pulsar
     ```sh
     $ ./bin/pulsar-admin topics create public/default/topic1
     $ ./bin/pulsar-client consume persistent://public/default/topic1 -s "subs1"
