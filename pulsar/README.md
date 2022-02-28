@@ -257,3 +257,19 @@
     $ ssh -i aws_ethereum.pem -N -f -L 9001:localhost:9000 \
     ubuntu@ec2-3-82-189-52.compute-1.amazonaws.com
     ```
+
+---
+
+## Important Notes
+- In order to start pulsar clean just delete `data/*` directory and reinitialize cluster metadata in Zookeeper like so:
+
+    ```sh
+    $ ./bin/pulsar initialize-cluster-metadata \
+      --cluster pulsar-cluster-1 \
+      --zookeeper localhost:2181 \
+      --configuration-store localhost:2181 \
+      --web-service-url http://localhost:8080 \
+      --web-service-url-tls https://localhost:8443 \
+      --broker-service-url pulsar://localhost:6650 \
+      --broker-service-url-tls pulsar+ssl://localhost:6651
+    ```
