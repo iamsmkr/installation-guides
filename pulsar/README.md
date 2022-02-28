@@ -34,17 +34,28 @@
     $ tar xvfz apache-pulsar-2.9.1-bin.tar.gz
     ```
 
-2. Start zookeeper
+2. Update `zookeeper.cfg`
+
+    Make following changes to the configuration file `zookeeper.conf` or copy [zoo.cfg](https://github.com/iamsmkr/installation-guides/blob/main/pulsar/zoo.cfg) to `conf` and rename to `zookeeper.conf`.
+    ```
+    autopurge.purgeInterval=12
+    admin.enableServer=true
+    admin.serverPort=2182
+    4lw.commands.whitelist=*
+    metricsProvider.httpPort=7001
+    ```
+    
+3. Start zookeeper
     ```sh
     $ ./bin/pulsar-daemon start zookeeper
     ```
 
-3. Verify Zookeeper 
+4. Verify Zookeeper 
     ```sh
     $ echo stat | nc localhost 2181
     ```
 
-4. Initialize cluster metadata in Zookeeper
+5. Initialize cluster metadata in Zookeeper
     ```sh
     $ ./bin/pulsar initialize-cluster-metadata \
       --cluster pulsar-cluster-1 \
@@ -56,7 +67,7 @@
       --broker-service-url-tls pulsar+ssl://localhost:6651
     ```
 
-5. Update `bookkeeper.conf`
+6. Update `bookkeeper.conf`
     
     Make following changes to the configuration file or copy [bookkeeper.conf](https://github.com/iamsmkr/installation-guides/blob/main/pulsar/bookkeeper.conf) to `/opt/pulsar/conf`.
     ```
@@ -72,18 +83,18 @@
     dlog.bkcAckQuorumSize=1
     ```
 
-6. Start Bookkeeper
+7. Start Bookkeeper
     ```sh
     $ ./bin/pulsar-daemon start bookie  # Or,
     $ ./bin/pulsar bookie   # This doesn't create logs under `logs` directory
     ```
 
-7. Verify Bookkeeper
+8. Verify Bookkeeper
     ```sh
     $ ./bin/bookkeeper shell bookiesanity
     ```
     
-8. Update `broker.conf`
+9. Update `broker.conf`
     
     Make following changes to the configuration file or copy [broker.conf](https://github.com/iamsmkr/installation-guides/blob/main/pulsar/broker.conf) to `/opt/pulsar/conf`.
     ```
@@ -101,13 +112,13 @@
     defaultRetentionSizeInMB=-1
     ```
 
-9. Start Pulsar
+10. Start Pulsar
     ```sh
     $ ./bin/pulsar-daemon start broker  # Or,
     $ ./bin/pulsar broker   # This doesn't create logs under `logs` directory
     ```
 
-10. Verify Pulsar
+11. Verify Pulsar
     ```sh
     $ ./bin/pulsar-admin topics create public/default/topic1
     $ ./bin/pulsar-client consume persistent://public/default/topic1 -s "subs1"
