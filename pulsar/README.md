@@ -138,6 +138,22 @@
     $ ./node_exporter
     ```
 
+### On macOS
+1. Install Node Exporter
+    ```sh
+    $ brew install node_exporter
+    ```
+
+2. Start Node Exporter
+    ```sh
+    $ node_exporter
+    ```
+
+3. Verify Installation
+    ```sh
+    $ curl http://localhost:9100/metrics
+    ```
+
 ## Pulsar Manager
 1. Download Pulsar Manager
     ```sh
