@@ -238,25 +238,25 @@
     - Access node metrics @ http://localhost:9100/metrics/
 
 ### On macOS
-- On mac, `opt` directory not already added as shared path from host to docker will return following error:
-    ```
-    docker: Error response from daemon: Mounts denied:
-    The path /opt/prometheus/prometheus.yml is not shared from the host and is not known to Docker.
-    You can configure shared paths from Docker -> Preferences... -> Resources -> File Sharing.
-    See https://docs.docker.com/desktop/mac for more info.
-    ```
-    
-    Add `opt` to `~/Library/Group Containers/group.com.docker/settings.json` and restart docker daemon.
-    ```
-    "filesharingDirectories" : [
-      "\/Users",
-      "\/Volumes",
-      "\/datadrive",
-      "\/private",
-      "\/tmp",
-      "\/opt"
-    ],
-    ```
+On mac, `opt` directory not already added as shared path from host to docker will return following error:
+```
+docker: Error response from daemon: Mounts denied:
+The path /opt/prometheus/prometheus.yml is not shared from the host and is not known to Docker.
+You can configure shared paths from Docker -> Preferences... -> Resources -> File Sharing.
+See https://docs.docker.com/desktop/mac for more info.
+```
+
+Add `opt` to `~/Library/Group Containers/group.com.docker/settings.json` and restart docker daemon.
+```
+"filesharingDirectories" : [
+  "\/Users",
+  "\/Volumes",
+  "\/datadrive",
+  "\/private",
+  "\/tmp",
+  "\/opt"
+],
+```
 
 ## Grafana
 1. Run Grafana docker container
