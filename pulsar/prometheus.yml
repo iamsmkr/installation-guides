@@ -22,14 +22,21 @@ scrape_configs:
     honor_labels: true # don't overwrite job & instance labels
     static_configs:
     - targets:
-      - '127.0.0.1:8080'
+      - '127.0.0.1:8000'
 
   - job_name: "zookeeper"
     honor_labels: true
     static_configs:
-    - targets:
+    - targets: 
       - '127.0.0.1:7001'
-
- - job_name: "node"
+ 
+  - job_name: "node"
     static_configs:
-    - targets: ['localhost:9100']
+    - targets: 
+      - '127.0.0.1:9100'
+
+  - job_name: "raphtory"
+    honor_labels: true
+    static_configs:
+    - targets:
+      - '127.0.0.1:8899'
